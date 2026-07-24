@@ -17,7 +17,8 @@ export const GET: APIRoute = () => {
 ## Faits
 
 - Cible : bailleurs particuliers en France, 1 à 5 logements, location nue ou meublée.
-- Fonctions : quittances PDF (art. 21, loi du 6 juillet 1989), suivi mensuel des loyers,
+- Fonctions : quittances et avis d'échéance PDF (art. 21, loi du 6 juillet 1989), suivi
+  mensuel des loyers avec paiements partiels, relevé annuel des encaissements,
   révision IRL (indices INSEE inclus), lettres d'impayés (relance, mise en demeure).
 - Local-first : les données restent dans le navigateur ; sauvegarde chiffrée exportable.
 - Aucun compte, aucun serveur de données, gratuit.
