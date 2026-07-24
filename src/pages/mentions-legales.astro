@@ -1,0 +1,45 @@
+---
+import Base from '../layouts/Base.astro';
+import { BRAND, CONTACT_EMAIL } from '../consts';
+---
+
+<Base
+	title="Mentions légales | Quitalo"
+	description="Mentions légales du site quitalo.co : éditeur, hébergeur, données personnelles."
+>
+	<section class="wrap">
+		<h1>Mentions légales</h1>
+
+		<h2>Éditeur</h2>
+		<p>
+			{BRAND} est édité par Florian Mousseau, particulier.<br />
+			Contact : <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+		</p>
+
+		<h2>Hébergement</h2>
+		<p>
+			Ce site est hébergé par Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107,
+			États-Unis (<a href="https://www.cloudflare.com">cloudflare.com</a>).
+		</p>
+
+		<h2>Données personnelles</h2>
+		<p>
+			Ce site ne dépose aucun cookie et ne collecte aucune donnée personnelle. L’application Quitalo
+			fonctionne entièrement dans le navigateur de son utilisateur : les données qui y sont saisies
+			(logements, baux, locataires, paiements) restent sur son appareil et ne sont jamais transmises
+			à l’éditeur. Chaque bailleur demeure responsable, au sens du RGPD, des données de ses
+			locataires qu’il y enregistre.
+		</p>
+	</section>
+</Base>
+
+<style>
+	h1 {
+		margin-top: 3rem;
+	}
+
+	h2 {
+		margin-top: 2rem;
+		font-size: 1.3rem;
+	}
+</style>

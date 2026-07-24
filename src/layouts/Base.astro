@@ -1,0 +1,120 @@
+---
+import '../styles/global.css';
+import { APP_URL, BRAND, GITHUB_URL, SEO, SITE_URL } from '../consts';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { title = SEO.title, description = SEO.description } = Astro.props;
+const canonical = new URL(Astro.url.pathname, SITE_URL).href;
+---
+
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonical} />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content={BRAND} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:locale" content="fr_FR" />
+	</head>
+	<body>
+		<header class="site-header">
+			<nav class="wrap">
+				<a href="/" class="brand">{BRAND}</a>
+				<div class="links">
+					<a href="/#fonctionnalites">Fonctionnalités</a>
+					<a href="/#donnees">Vos données</a>
+					<a href={APP_URL} class="btn btn-primary">Ouvrir l’application</a>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<slot />
+		</main>
+		<footer class="site-footer">
+			<div class="wrap">
+				<p>
+					{BRAND} est édité en France. Le code de l’application est
+					<a href={GITHUB_URL}>public sur GitHub</a>.
+				</p>
+				<p>
+					Du même atelier : <a href="https://fidalo.co">fidalo</a> (patrimoine personnel) et
+					<a href="https://selfstore.dev">selfstore</a> (stockage local-first).
+				</p>
+				<p>
+					<a href="/mentions-legales">Mentions légales</a>
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>
+
+<style>
+	.site-header {
+		border-bottom: 1px solid var(--border);
+		background: var(--bg-raised);
+	}
+
+	.site-header nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-top: 0.9rem;
+		padding-bottom: 0.9rem;
+	}
+
+	.brand {
+		font-weight: 700;
+		font-size: 1.2rem;
+		color: var(--text);
+	}
+
+	.brand:hover {
+		text-decoration: none;
+		color: var(--accent);
+	}
+
+	.links {
+		display: flex;
+		align-items: center;
+		gap: 1.4rem;
+	}
+
+	.links a:not(.btn) {
+		color: var(--text-soft);
+	}
+
+	.links a:not(.btn):hover {
+		color: var(--accent);
+		text-decoration: none;
+	}
+
+	@media (max-width: 40rem) {
+		.links a:not(.btn) {
+			display: none;
+		}
+	}
+
+	.site-footer {
+		border-top: 1px solid var(--border);
+		margin-top: 4rem;
+		padding: 2rem 0 2.5rem;
+		color: var(--text-soft);
+		font-size: 0.95rem;
+	}
+
+	.site-footer p {
+		margin: 0.4rem 0;
+	}
+</style>

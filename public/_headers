@@ -1,0 +1,4 @@
+# Cloudflare Pages headers. The llms.txt endpoint is UTF-8 French text; an
+# explicit charset stops browsers from guessing latin-1 (mojibake).
+/llms.txt
+  Content-Type: text/plain; charset=utf-8

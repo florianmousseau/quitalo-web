@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://quitalo.co/sitemap-index.xml

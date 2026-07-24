@@ -1,0 +1,102 @@
+/* Design tokens and base styles. Light and dark follow the system preference;
+   no JS on the page, the whole site is static text. */
+
+:root {
+	--bg: #faf9f7;
+	--bg-raised: #ffffff;
+	--text: #1c2321;
+	--text-soft: #55605c;
+	--accent: #0b6e4f;
+	--accent-strong: #095c42;
+	--accent-soft: #e3f1ec;
+	--border: #e2e0dc;
+	--radius: 10px;
+	--content: 64rem;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: #131715;
+		--bg-raised: #1b201e;
+		--text: #e8eae9;
+		--text-soft: #a2aca8;
+		--accent: #4cc39a;
+		--accent-strong: #6ed3b0;
+		--accent-soft: #1d2f28;
+		--border: #2a312e;
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	color-scheme: light dark;
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	background: var(--bg);
+	color: var(--text);
+	font-family:
+		system-ui,
+		-apple-system,
+		'Segoe UI',
+		Roboto,
+		sans-serif;
+	font-size: 1.0625rem;
+	line-height: 1.65;
+}
+
+a {
+	color: var(--accent);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+h1,
+h2,
+h3 {
+	line-height: 1.25;
+	letter-spacing: -0.015em;
+}
+
+.wrap {
+	max-width: var(--content);
+	margin: 0 auto;
+	padding: 0 1.25rem;
+}
+
+.btn {
+	display: inline-block;
+	padding: 0.7rem 1.4rem;
+	border-radius: var(--radius);
+	font-weight: 600;
+	border: 1px solid transparent;
+}
+
+.btn-primary {
+	background: var(--accent);
+	color: #ffffff;
+}
+
+.btn-primary:hover {
+	background: var(--accent-strong);
+	text-decoration: none;
+}
+
+.btn-ghost {
+	border-color: var(--border);
+	color: var(--text);
+}
+
+.btn-ghost:hover {
+	border-color: var(--accent);
+	color: var(--accent);
+	text-decoration: none;
+}
