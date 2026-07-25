@@ -9,6 +9,9 @@
 	--accent: #0b6e4f;
 	--accent-strong: #095c42;
 	--accent-soft: #e3f1ec;
+	/* Text laid over --accent. Flips with the theme: the dark palette lightens
+	   the accent, so ink reads on it where white does not. */
+	--accent-contrast: #ffffff;
 	--border: #e2e0dc;
 	--radius: 10px;
 	--content: 64rem;
@@ -23,6 +26,7 @@
 		--accent: #4cc39a;
 		--accent-strong: #6ed3b0;
 		--accent-soft: #1d2f28;
+		--accent-contrast: #131715;
 		--border: #2a312e;
 	}
 }
@@ -82,7 +86,7 @@ h3 {
 
 .btn-primary {
 	background: var(--accent);
-	color: #ffffff;
+	color: var(--accent-contrast);
 }
 
 .btn-primary:hover {
