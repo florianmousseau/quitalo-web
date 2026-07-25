@@ -100,3 +100,28 @@ h3 {
 	color: var(--accent);
 	text-decoration: none;
 }
+
+/* Legal and long-form text pages. */
+.legal {
+	max-width: 46rem;
+	margin-top: 2.5rem;
+	margin-bottom: 3rem;
+}
+
+.legal h1 {
+	margin: 0 0 1.5rem;
+}
+
+.legal h2 {
+	margin: 2rem 0 0.6rem;
+	font-size: 1.3rem;
+}
+
+.legal .maj,
+.legal p {
+	color: var(--text-soft);
+}
+
+.legal .maj {
+	font-size: 0.95rem;
+}
