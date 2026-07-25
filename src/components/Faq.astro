@@ -1,0 +1,39 @@
+---
+// The question list shared by the pages that answer objections. The caller
+// owns the JSON-LD: only it knows whether its page should claim the FAQPage
+// type, and a page may hold questions it does not want indexed.
+interface Props {
+	items: { q: string; a: string }[];
+}
+
+const { items } = Astro.props;
+---
+
+{
+	items.map((item) => (
+		<details>
+			<summary>{item.q}</summary>
+			<p>{item.a}</p>
+		</details>
+	))
+}
+
+<style>
+	details {
+		border: 1px solid var(--border);
+		border-radius: var(--radius);
+		background: var(--bg-raised);
+		padding: 0.8rem 1.1rem;
+		margin-bottom: 0.7rem;
+	}
+
+	summary {
+		font-weight: 600;
+		cursor: pointer;
+	}
+
+	details p {
+		margin: 0.7rem 0 0.2rem;
+		color: var(--text-soft);
+	}
+</style>
