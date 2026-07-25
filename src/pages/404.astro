@@ -1,0 +1,48 @@
+---
+import Base from '../layouts/Base.astro';
+import { APP_URL } from '../consts';
+---
+
+<Base title="Page introuvable | Quitalo" description="Cette page n’existe pas sur quitalo.co.">
+	<section class="wrap notfound">
+		<p class="code">404</p>
+		<h1>Cette page n’existe pas</h1>
+		<p>
+			Le lien est erroné, la page a changé d’adresse, ou elle n’a jamais existé. Rien de grave :
+			voici par où repartir.
+		</p>
+		<ul>
+			<li><a href="/">Accueil</a></li>
+			<li><a href="/#fonctionnalites">Fonctionnalités</a></li>
+			<li><a href="/#tarif">Tarif</a></li>
+			<li><a href="/#donnees">Vos données</a></li>
+			<li><a href={APP_URL}>Ouvrir l’application</a></li>
+		</ul>
+	</section>
+</Base>
+
+<style>
+	.notfound {
+		max-width: 40rem;
+		padding-block: 4rem 2rem;
+	}
+
+	.code {
+		color: var(--accent);
+		font-weight: 700;
+		margin: 0;
+	}
+
+	.notfound h1 {
+		margin: 0.3rem 0 1rem;
+	}
+
+	.notfound ul {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem 1.4rem;
+		list-style: none;
+		margin: 1.5rem 0 0;
+		padding: 0;
+	}
+</style>
