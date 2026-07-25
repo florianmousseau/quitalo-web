@@ -1,0 +1,48 @@
+---
+// A responsive grid of titled blurbs: the features on the home page, the
+// commitments on the pricing-objection page. Headings are h2 so the grid can
+// sit directly under an h1; a page that nests it deeper passes `level`.
+interface Props {
+	items: { title: string; body: string }[];
+	level?: 2 | 3;
+}
+
+const { items, level = 2 } = Astro.props;
+const Heading = `h${level}` as 'h2' | 'h3';
+---
+
+<div class="grid">
+	{
+		items.map((item) => (
+			<article class="card">
+				<Heading>{item.title}</Heading>
+				<p>{item.body}</p>
+			</article>
+		))
+	}
+</div>
+
+<style>
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+		gap: 1rem;
+	}
+
+	.card {
+		background: var(--bg-raised);
+		border: 1px solid var(--border);
+		border-radius: var(--radius);
+		padding: 1.2rem 1.3rem;
+	}
+
+	.card :is(h2, h3) {
+		margin: 0 0 0.5rem;
+		font-size: 1.1rem;
+	}
+
+	.card p {
+		margin: 0;
+		color: var(--text-soft);
+	}
+</style>

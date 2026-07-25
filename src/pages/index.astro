@@ -1,5 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
+import CardGrid from '../components/CardGrid.astro';
+import Faq from '../components/Faq.astro';
 import { APP_URL, BRAND, DEFINITION } from '../consts';
 
 const features = [
@@ -117,16 +119,7 @@ const structuredData = {
 
 	<section id="fonctionnalites" class="wrap">
 		<h2>Tout ce que la gestion d’un logement demande</h2>
-		<div class="grid">
-			{
-				features.map((f) => (
-					<article class="card">
-						<h3>{f.title}</h3>
-						<p>{f.body}</p>
-					</article>
-				))
-			}
-		</div>
+		<CardGrid items={features} level={3} />
 	</section>
 
 	<section id="donnees" class="wrap">
@@ -164,20 +157,14 @@ const structuredData = {
 		</p>
 		<p>
 			Les bailleurs qui l’utilisent dès maintenant gardent un avantage fondateur. Le détail est dans
-			les <a href="/cgv">conditions de vente</a>.
+			les <a href="/cgv">conditions de vente</a>, et nos engagements sur
+			<a href="/sans-abonnement">ce que Quitalo ne fera jamais</a>.
 		</p>
 	</section>
 
 	<section class="wrap">
 		<h2>Questions fréquentes</h2>
-		{
-			faq.map((item) => (
-				<details>
-					<summary>{item.q}</summary>
-					<p>{item.a}</p>
-				</details>
-			))
-		}
+		<Faq items={faq} />
 	</section>
 
 	<section class="wrap closing">
@@ -230,47 +217,6 @@ const structuredData = {
 	h2 {
 		font-size: 1.65rem;
 		margin: 0 0 1rem;
-	}
-
-	.grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
-		gap: 1rem;
-	}
-
-	.card {
-		background: var(--bg-raised);
-		border: 1px solid var(--border);
-		border-radius: var(--radius);
-		padding: 1.2rem 1.3rem;
-	}
-
-	.card h3 {
-		margin: 0 0 0.5rem;
-		font-size: 1.1rem;
-	}
-
-	.card p {
-		margin: 0;
-		color: var(--text-soft);
-	}
-
-	details {
-		border: 1px solid var(--border);
-		border-radius: var(--radius);
-		background: var(--bg-raised);
-		padding: 0.8rem 1.1rem;
-		margin-bottom: 0.7rem;
-	}
-
-	summary {
-		font-weight: 600;
-		cursor: pointer;
-	}
-
-	details p {
-		margin: 0.7rem 0 0.2rem;
-		color: var(--text-soft);
 	}
 
 	.closing {

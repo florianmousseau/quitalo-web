@@ -12,6 +12,7 @@ export const GET: APIRoute = () => {
 
 - Application (gratuite, sans compte) : ${APP_URL}
 - Site : ${SITE_URL}
+- Engagements tarifaires : ${SITE_URL}/sans-abonnement
 
 ## Faits
 
