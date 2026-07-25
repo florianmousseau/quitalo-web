@@ -1,0 +1,56 @@
+---
+import Base from '../layouts/Base.astro';
+import { BRAND, CONTACT_EMAIL } from '../consts';
+---
+
+<Base
+	title="Confidentialité | Quitalo"
+	description="Politique de confidentialité de Quitalo : application local-first, aucune donnée collectée, le bailleur reste seul responsable de traitement."
+>
+	<section class="wrap legal">
+		<h1>Politique de confidentialité</h1>
+
+		<p class="maj">
+			{BRAND} est une application <strong>local-first</strong> : elle s’exécute dans votre navigateur,
+			sans compte et sans serveur. L’éditeur ne collecte, n’héberge ni ne consulte aucune de vos données.
+		</p>
+
+		<h2>Aucune collecte par l’éditeur</h2>
+		<p>
+			Les données que vous saisissez dans l’application (logements, baux, locataires, loyers,
+			paiements) restent sur votre appareil, dans le stockage de votre navigateur. Elles ne sont
+			jamais transmises à l’éditeur, qui n’a aucun serveur où les recevoir. Le site quitalo.co ne
+			dépose aucun cookie et n’utilise aucun traceur ni outil de mesure d’audience.
+		</p>
+
+		<h2>Vous êtes responsable de traitement</h2>
+		<p>
+			Comme l’éditeur ne voit jamais vos données, c’est <strong>vous, bailleur</strong>, qui êtes
+			seul responsable de traitement au sens du RGPD pour les données de vos locataires. Vous restez
+			tenu de vos obligations (information des personnes, durée de conservation, sécurité). Quitalo
+			vous fournit un outil qui s’exécute chez vous et vous aide à ne conserver que ce qui est utile
+			à la gestion locative.
+		</p>
+
+		<h2>Vos données vous appartiennent</h2>
+		<p>
+			Vous exportez à tout moment une sauvegarde chiffrée, que vous conservez où vous voulez
+			(disque, Google Drive). Vous pouvez tout effacer depuis votre navigateur. Il n’y a pas de
+			compte à supprimer ni d’abonnement à résilier.
+		</p>
+
+		<h2>Hébergement du site</h2>
+		<p>
+			Le site vitrine est hébergé par Cloudflare, Inc. (101 Townsend Street, San Francisco, CA
+			94107, États-Unis). Comme tout site en ligne, l’hébergeur peut traiter des données techniques
+			de connexion (par exemple l’adresse IP) dans ses journaux, pour la seule fourniture et la
+			sécurité du service, indépendamment de l’éditeur.
+		</p>
+
+		<h2>Contact</h2>
+		<p>
+			Pour toute question : <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Les
+			informations sur l’éditeur figurent dans les <a href="/mentions-legales">mentions légales</a>.
+		</p>
+	</section>
+</Base>
