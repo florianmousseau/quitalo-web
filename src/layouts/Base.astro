@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { APP_URL, BRAND, GITHUB_URL, SEO, SITE_URL } from '../consts';
+import { APP_URL, BRAND, SEO, SITE_URL } from '../consts';
 
 interface Props {
 	title?: string;
@@ -27,6 +27,10 @@ const canonical = new URL(Astro.url.pathname, SITE_URL).href;
 		<meta property="og:description" content={description} />
 		<meta property="og:url" content={canonical} />
 		<meta property="og:locale" content="fr_FR" />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<slot name="head" />
 	</head>
 	<body>
 		<header class="site-header">
@@ -45,10 +49,7 @@ const canonical = new URL(Astro.url.pathname, SITE_URL).href;
 		</main>
 		<footer class="site-footer">
 			<div class="wrap">
-				<p>
-					{BRAND} est édité en France. Le code de l’application est
-					<a href={GITHUB_URL}>public sur GitHub</a>.
-				</p>
+				<p>{BRAND} est édité en France, sans investisseur et sans collecte de données.</p>
 				<p>
 					Du même atelier : <a href="https://fidalo.co">fidalo</a> (patrimoine personnel) et
 					<a href="https://selfstore.dev">selfstore</a> (stockage local-first).

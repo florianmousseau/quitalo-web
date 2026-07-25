@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { APP_URL } from '../consts';
+import { APP_URL, BRAND, DEFINITION } from '../consts';
 
 const features = [
 	{
@@ -57,9 +57,49 @@ const faq = [
 			'sauvegarde chiffrée que vous gardez où vous voulez. Rien n’est envoyé à Quitalo.'
 	}
 ];
+
+// Mirrors the visible feature and FAQ blocks below; both are derived from the
+// same arrays so the markup and the structured data cannot drift apart.
+const structuredData = {
+	'@context': 'https://schema.org',
+	'@graph': [
+		{
+			'@type': 'SoftwareApplication',
+			name: BRAND,
+			applicationCategory: 'BusinessApplication',
+			operatingSystem: 'Web',
+			url: APP_URL,
+			description: DEFINITION,
+			offers: {
+				'@type': 'Offer',
+				price: '0',
+				priceCurrency: 'EUR'
+			},
+			featureList: features.map((f) => f.title)
+		},
+		{
+			'@type': 'FAQPage',
+			mainEntity: faq.map((item) => ({
+				'@type': 'Question',
+				name: item.q,
+				acceptedAnswer: {
+					'@type': 'Answer',
+					text: item.a
+				}
+			}))
+		}
+	]
+};
 ---
 
 <Base>
+	<script
+		type="application/ld+json"
+		slot="head"
+		is:inline
+		set:html={JSON.stringify(structuredData)}
+	/>
+
 	<section class="hero">
 		<div class="wrap">
 			<h1>Vos locations en ordre.<br />Vos données chez vous.</h1>

@@ -9,8 +9,6 @@ export const SITE_URL = 'https://quitalo.co';
 /** The application itself (local-first, no account). */
 export const APP_URL = 'https://app.quitalo.co';
 
-export const GITHUB_URL = 'https://github.com/florianmousseau/quitalo';
-
 export const BRAND = 'Quitalo';
 
 export const CONTACT_EMAIL = 'florian.mousseau@gmail.com';
