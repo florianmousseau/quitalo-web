@@ -19,13 +19,13 @@ universel, le trait tiré sous une colonne quand le total est arrêté. C'est ce
 trait qui devient la marque. Ni toit, ni clé, ni trousseau : ce sont les clichés
 du secteur, et tous les concurrents les portent déjà.
 
-| Fichier | Usage |
-| --- | --- |
-| `brand/signe.svg` | la source, encrée sur `currentColor` |
-| `src/components/Signe.astro` | dans la vitrine (prop `taille`) |
-| `../quitalo/src/lib/components/Signe.svelte` | dans l'application |
-| `public/favicon.svg` | onglet, avec sa teinte figée et une règle média pour la barre sombre |
-| `public/favicon-32.png`, `public/apple-touch-icon.png` | replis, régénérés depuis le SVG |
+| Fichier                                                | Usage                                                                |
+| ------------------------------------------------------ | -------------------------------------------------------------------- |
+| `brand/signe.svg`                                      | la source, encrée sur `currentColor`                                 |
+| `src/components/Signe.astro`                           | dans la vitrine (prop `taille`)                                      |
+| `../quitalo/src/lib/components/Signe.svelte`           | dans l'application                                                   |
+| `public/favicon.svg`                                   | onglet, avec sa teinte figée et une règle média pour la barre sombre |
+| `public/favicon-32.png`, `public/apple-touch-icon.png` | replis, régénérés depuis le SVG                                      |
 
 Le composant prend sa couleur sur `currentColor`, donc il s'inverse tout seul en
 thème sombre. Ne jamais le redessiner à la main dans un écran.
@@ -53,18 +53,18 @@ d'état qui se disputent l'attention ne disent plus rien.
 Le rouge est un rouge de **registre**, pas d'alarme : un loyer en retard est un
 état du compte, pas un incident.
 
-| Jeton | Rôle | Clair | Sombre |
-| --- | --- | --- | --- |
-| `--papier` | fond de page (jamais du blanc pur) | `#faf9f7` | `#16130f` |
-| `--carte` | surface surélevée | `#ffffff` | `#1e1a16` |
-| `--encre` | texte courant (noir chaud) | `#221f1c` | `#ece7e0` |
-| `--encre-douce` | mentions secondaires | `#5b554e` | `#a79f95` |
-| `--regle` | ce qui est soldé, et la marque | `#0b6e4f` | `#4cc39a` |
-| `--regle-fond` | pastille d'un mois soldé | `#e2efe9` | `#17281f` |
-| `--sur-regle` | encre posée sur `--regle` | `#ffffff` | `#16130f` |
-| `--du` | ce qui est dû ou en retard | `#a8442a` | `#e79070` |
-| `--du-fond` | pastille d'un mois dû | `#f6e7e0` | `#2c1b14` |
-| `--bord` | filets et séparations | `#e4e0da` | `#322c25` |
+| Jeton           | Rôle                               | Clair     | Sombre    |
+| --------------- | ---------------------------------- | --------- | --------- |
+| `--papier`      | fond de page (jamais du blanc pur) | `#faf9f7` | `#16130f` |
+| `--carte`       | surface surélevée                  | `#ffffff` | `#1e1a16` |
+| `--encre`       | texte courant (noir chaud)         | `#221f1c` | `#ece7e0` |
+| `--encre-douce` | mentions secondaires               | `#5b554e` | `#a79f95` |
+| `--regle`       | ce qui est soldé, et la marque     | `#0b6e4f` | `#4cc39a` |
+| `--regle-fond`  | pastille d'un mois soldé           | `#e2efe9` | `#17281f` |
+| `--sur-regle`   | encre posée sur `--regle`          | `#ffffff` | `#16130f` |
+| `--du`          | ce qui est dû ou en retard         | `#a8442a` | `#e79070` |
+| `--du-fond`     | pastille d'un mois dû              | `#f6e7e0` | `#2c1b14` |
+| `--bord`        | filets et séparations              | `#e4e0da` | `#322c25` |
 
 Ce qui distingue un mois **partiel** d'un mois en retard n'est donc pas une
 troisième teinte mais la **forme** : un filet interrompu, qui dit « commencé,
