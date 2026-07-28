@@ -38,7 +38,7 @@ const canonical = new URL(Astro.url.pathname, SITE_URL).href;
 				<a href="/" class="brand">{BRAND}</a>
 				<div class="links">
 					<a href="/#fonctionnalites">Fonctionnalités</a>
-					<a href="/#tarif">Tarif</a>
+					<a href="/engagements">Engagements</a>
 					<a href="/#donnees">Vos données</a>
 					<a href={APP_URL} class="btn btn-primary">Ouvrir l’application</a>
 				</div>
@@ -55,10 +55,7 @@ const canonical = new URL(Astro.url.pathname, SITE_URL).href;
 					<a href="https://selfstore.dev">selfstore</a> (stockage local-first).
 				</p>
 				<p>
-					<!-- Pas de lien vers les CGV : elles ne sont pas en vigueur, et un pied
-					     de page les presenterait comme les conditions du service. Le
-					     paragraphe sur le tarif y renvoie, en contexte. -->
-					<a href="/#tarif">Tarif</a> · <a href="/sans-abonnement">Sans abonnement</a> ·
+					<a href="/engagements">Engagements</a> ·
 					<a href="/mentions-legales">Mentions légales</a> ·
 					<a href="/confidentialite">Confidentialité</a> · <a href="/cgu">CGU</a>
 				</p>

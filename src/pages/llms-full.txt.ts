@@ -36,12 +36,11 @@ Bailleurs particuliers en France, un à cinq logements, loués vides ou meublés
 sans agence. Baux d'habitation régis par la loi du 6 juillet 1989. Hors champ :
 SCI à l'impôt sur les sociétés, baux commerciaux, gestion pour compte de tiers.
 
-## Tarif
+## Engagements
 
-Gratuit aujourd'hui, sans compte et sans publicité. À terme : gratuit jusqu'à
-trois biens, puis une licence à vie de 39 EUR, sans abonnement. Aucune vente
-n'est ouverte à ce jour et les conditions de vente publiées ne sont pas encore
-en vigueur.
+Aucun compte à créer, aucune période d'essai, aucun document retenu, aucun
+abonnement, aucune donnée revendue. Le détail et la raison technique de chaque
+engagement : ${SITE_URL}/engagements
 
 ## Questions fréquentes
 

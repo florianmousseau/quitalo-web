@@ -14,7 +14,7 @@ export const GET: APIRoute = () => {
 - Démonstration, jeu fictif, rien n'est enregistré : ${DEMO_URL}
 - Version longue de ce fichier : ${SITE_URL}/llms-full.txt
 - Site : ${SITE_URL}
-- Engagements tarifaires : ${SITE_URL}/sans-abonnement
+- Engagements : ${SITE_URL}/engagements
 
 ## Faits
 
@@ -23,9 +23,7 @@ export const GET: APIRoute = () => {
   mensuel des loyers avec paiements partiels, relevé annuel des encaissements,
   révision IRL (indices INSEE inclus), lettres d'impayés (relance, mise en demeure).
 - Local-first : les données restent dans le navigateur ; sauvegarde chiffrée exportable.
-- Aucun compte, aucun serveur de données.
-- Tarif : gratuit jusqu'à trois biens ; au-delà, licence à vie de 39 EUR, mises à
-  jour comprises, sans abonnement.
+- Aucun compte, aucun serveur de données, aucun abonnement.
 `;
 	return new Response(body, { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
 };
