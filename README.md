@@ -30,3 +30,13 @@ npm run gate
 
 `gate` = `format:check` + `lint` + `check` + `knip` + `dup`. CI runs it on
 every push and pull request; gitleaks scans for secrets.
+
+## Charte graphique
+
+Le signe, les couleurs, la typographie et leur vérificateur de contraste vivent
+dans [brand/charte.md](brand/charte.md). Elle vaut aussi pour l'application : si
+un écran et la charte divergent, c'est l'écran qui a tort.
+
+```sh
+node brand/contraste.mjs
+```

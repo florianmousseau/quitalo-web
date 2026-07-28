@@ -1,33 +1,54 @@
-/* Design tokens and base styles. Light and dark follow the system preference;
-   no JS on the page, the whole site is static text. */
+/* Les jetons de la charte (brand/charte.md). Si un ecran et la charte
+   divergent, c'est l'ecran qui a tort.
+
+   Deux couleurs seulement portent un sens, toujours le meme : --regle pour ce
+   qui est solde, --du pour ce qui est du ou en retard. Le reste est du papier,
+   de l'encre et des filets. Le rouge est un rouge de REGISTRE, pas d'alarme :
+   un loyer en retard est un etat du compte, pas un incident. */
+
+@font-face {
+	/* Auto-hebergee, jamais un CDN : un produit qui promet que les donnees ne
+	   partent pas ne peut pas appeler un tiers a chaque ouverture. Fichier
+	   variable, un seul poids a telecharger pour le corps et le semi-gras. */
+	font-family: 'Source Serif 4';
+	src: url('/fonts/source-serif-4-latin.woff2') format('woff2');
+	font-weight: 400 700;
+	font-style: normal;
+	font-display: swap;
+}
 
 :root {
-	--bg: #faf9f7;
-	--bg-raised: #ffffff;
-	--text: #1c2321;
-	--text-soft: #55605c;
-	--accent: #0b6e4f;
-	--accent-strong: #095c42;
-	--accent-soft: #e3f1ec;
-	/* Text laid over --accent. Flips with the theme: the dark palette lightens
+	--papier: #faf9f7;
+	--carte: #ffffff;
+	--encre: #221f1c;
+	--encre-douce: #5b554e;
+	--regle: #0b6e4f;
+	--regle-fort: #095c42;
+	--regle-fond: #e2efe9;
+	/* Text laid over --regle. Flips with the theme: the dark palette lightens
 	   the accent, so ink reads on it where white does not. */
-	--accent-contrast: #ffffff;
-	--border: #e2e0dc;
-	--radius: 10px;
+	--sur-regle: #ffffff;
+	--du: #a8442a;
+	--du-fond: #f6e7e0;
+	--bord: #e4e0da;
+	--rayon: 10px;
 	--content: 64rem;
+	--serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--bg: #131715;
-		--bg-raised: #1b201e;
-		--text: #e8eae9;
-		--text-soft: #a2aca8;
-		--accent: #4cc39a;
-		--accent-strong: #6ed3b0;
-		--accent-soft: #1d2f28;
-		--accent-contrast: #131715;
-		--border: #2a312e;
+		--papier: #16130f;
+		--carte: #1e1a16;
+		--encre: #ece7e0;
+		--encre-douce: #a79f95;
+		--regle: #4cc39a;
+		--regle-fort: #6ed3b0;
+		--regle-fond: #17281f;
+		--sur-regle: #16130f;
+		--du: #e79070;
+		--du-fond: #2c1b14;
+		--bord: #322c25;
 	}
 }
 
@@ -42,8 +63,8 @@ html {
 
 body {
 	margin: 0;
-	background: var(--bg);
-	color: var(--text);
+	background: var(--papier);
+	color: var(--encre);
 	font-family:
 		system-ui,
 		-apple-system,
@@ -55,7 +76,7 @@ body {
 }
 
 a {
-	color: var(--accent);
+	color: var(--regle);
 	text-decoration: none;
 }
 
@@ -66,8 +87,13 @@ a:hover {
 h1,
 h2,
 h3 {
-	line-height: 1.25;
-	letter-spacing: -0.015em;
+	/* Le serif est pour les titres et les grands nombres. Dans une ligne dense
+	   la pile systeme reste plus lisible, donc le corps n'y touche pas. */
+	font-family: var(--serif);
+	font-weight: 600;
+	line-height: 1.2;
+	letter-spacing: -0.01em;
+	text-wrap: balance;
 }
 
 .wrap {
@@ -79,29 +105,29 @@ h3 {
 .btn {
 	display: inline-block;
 	padding: 0.7rem 1.4rem;
-	border-radius: var(--radius);
+	border-radius: var(--rayon);
 	font-weight: 600;
 	border: 1px solid transparent;
 }
 
 .btn-primary {
-	background: var(--accent);
-	color: var(--accent-contrast);
+	background: var(--regle);
+	color: var(--sur-regle);
 }
 
 .btn-primary:hover {
-	background: var(--accent-strong);
+	background: var(--regle-fort);
 	text-decoration: none;
 }
 
 .btn-ghost {
-	border-color: var(--border);
-	color: var(--text);
+	border-color: var(--bord);
+	color: var(--encre);
 }
 
 .btn-ghost:hover {
-	border-color: var(--accent);
-	color: var(--accent);
+	border-color: var(--regle);
+	color: var(--regle);
 	text-decoration: none;
 }
 
@@ -123,7 +149,7 @@ h3 {
 
 .legal .maj,
 .legal p {
-	color: var(--text-soft);
+	color: var(--encre-douce);
 }
 
 .legal .maj {

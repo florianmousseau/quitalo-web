@@ -1,0 +1,38 @@
+---
+// Le signe de la charte : une page, et le trait du total a l'interieur.
+// Source unique, reprise de brand/signe.svg. Il s'encre sur `currentColor`,
+// donc il suit la couleur de son contexte et s'inverse tout seul en theme
+// sombre. Ne jamais le redessiner a la main dans un ecran.
+interface Props {
+	taille?: number;
+}
+
+const { taille = 22 } = Astro.props;
+---
+
+<svg
+	width={taille}
+	height={taille}
+	viewBox="0 0 24 24"
+	aria-hidden="true"
+	focusable="false"
+	class="signe"
+>
+	<rect
+		x="3.2"
+		y="2.6"
+		width="17.6"
+		height="18.8"
+		rx="2.6"
+		fill="none"
+		stroke="currentColor"
+		stroke-width="2.1"></rect>
+	<rect x="6.8" y="15.1" width="10.4" height="2.7" rx="1.35" fill="currentColor"></rect>
+</svg>
+
+<style>
+	.signe {
+		display: block;
+		flex: none;
+	}
+</style>
