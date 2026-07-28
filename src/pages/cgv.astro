@@ -7,6 +7,12 @@ import { BRAND, CONTACT_EMAIL } from '../consts';
 	title="Conditions de vente | Quitalo"
 	description="Conditions générales de vente de Quitalo : licence à vie du logiciel de gestion locative local-first, gratuit jusqu’à trois biens."
 >
+	<!-- Ces conditions ne sont pas en vigueur : rien n'est vendu aujourd'hui.
+	     Les laisser indexer ferait apparaitre dans les moteurs des conditions de
+	     vente pour une offre qui n'existe pas encore. `follow` garde les liens
+	     utiles vers les CGU. A retirer le jour de l'ouverture payante. -->
+	<meta slot="head" name="robots" content="noindex, follow" />
+
 	<section class="wrap legal">
 		<h1>Conditions générales de vente</h1>
 

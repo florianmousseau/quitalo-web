@@ -9,6 +9,11 @@ export const SITE_URL = 'https://quitalo.co';
 /** The application itself (local-first, no account). */
 export const APP_URL = 'https://app.quitalo.co';
 
+/** La démonstration : un jeu fictif chargé en mémoire, rien n'est enregistré.
+ *  C'est la seule façon d'essayer le produit sans saisir de vraies données de
+ *  locataires. */
+export const DEMO_URL = `${APP_URL}/?demo`;
+
 export const BRAND = 'Quitalo';
 
 export const CONTACT_EMAIL = 'florian.mousseau@gmail.com';

@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import { APP_URL, DEFINITION, SITE_URL } from '../consts';
+import { APP_URL, DEFINITION, DEMO_URL, SITE_URL } from '../consts';
 
 // Machine-readable site summary (llms.txt convention): the same canonical
 // definition the human pages use, plus the few links that matter.
@@ -11,6 +11,8 @@ export const GET: APIRoute = () => {
 ## Liens
 
 - Application (gratuite, sans compte) : ${APP_URL}
+- Démonstration, jeu fictif, rien n'est enregistré : ${DEMO_URL}
+- Version longue de ce fichier : ${SITE_URL}/llms-full.txt
 - Site : ${SITE_URL}
 - Engagements tarifaires : ${SITE_URL}/sans-abonnement
 
