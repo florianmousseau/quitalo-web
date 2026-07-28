@@ -4,10 +4,10 @@
 // sentence with the product.
 
 /** Canonical origin of this site (no trailing slash). */
-export const SITE_URL = 'https://quitalo.co';
+export const SITE_URL = 'https://quitalo.fr';
 
 /** The application itself (local-first, no account). */
-export const APP_URL = 'https://app.quitalo.co';
+export const APP_URL = 'https://app.quitalo.fr';
 
 /** La démonstration : un jeu fictif chargé en mémoire, rien n'est enregistré.
  *  C'est la seule façon d'essayer le produit sans saisir de vraies données de
