@@ -12,40 +12,40 @@ const promises = [
 	{
 		title: 'Aucun compte à créer',
 		body:
-			'L’application s’ouvre et fonctionne. Il n’y a pas de formulaire d’inscription, ' +
-			'pas d’email à confirmer, pas de mot de passe à retenir. Rien à résilier non plus.'
+			"L'application s'ouvre et fonctionne. Il n'y a pas de formulaire d'inscription, " +
+			"pas d'email à confirmer, pas de mot de passe à retenir. Rien à résilier non plus."
 	},
 	{
-		title: 'Aucune période d’essai',
+		title: "Aucune période d'essai",
 		body:
-			'Rien ne s’arrête au septième jour. Les fonctions que vous utilisez aujourd’hui ' +
+			"Rien ne s'arrête au septième jour. Les fonctions que vous utilisez aujourd'hui " +
 			'fonctionneront de la même manière dans six mois, sans compte à rebours.'
 	},
 	{
 		title: 'Aucun document retenu',
 		body:
-			'Quittances, avis d’échéance, relevés et courriers sont fabriqués dans votre ' +
-			'navigateur, sur votre appareil. Il n’y a aucun serveur à qui demander ' +
-			'l’autorisation de les télécharger : techniquement, personne ne peut vous les retenir.'
+			"Quittances, avis d'échéance, relevés et courriers sont fabriqués dans votre " +
+			"navigateur, sur votre appareil. Il n'y a aucun serveur à qui demander " +
+			"l'autorisation de les télécharger : techniquement, personne ne peut vous les retenir."
 	},
 	{
 		title: 'Aucun compte supprimé pour inactivité',
 		body:
-			'Un bailleur dont tout se passe bien n’ouvre pas son outil pendant des mois. ' +
-			'Ici c’est sans conséquence : vos données sont sur votre appareil, pas sur un ' +
+			"Un bailleur dont tout se passe bien n'ouvre pas son outil pendant des mois. " +
+			"Ici c'est sans conséquence : vos données sont sur votre appareil, pas sur un " +
 			'serveur qui fait le ménage dans ses comptes dormants.'
 	},
 	{
 		title: 'Aucune donnée revendue',
 		body:
-			'Pas parce que nous sommes vertueux, mais parce qu’il n’existe pas de serveur où ' +
+			"Pas parce que nous sommes vertueux, mais parce qu'il n'existe pas de serveur où " +
 			'les envoyer. Les données de vos locataires ne quittent jamais votre navigateur.'
 	},
 	{
 		title: 'Aucun abonnement',
 		body:
-			'Rien à renouveler, donc aucune échéance qui vienne couper l’accès à vos ' +
-			'documents. Ce que vous produisez aujourd’hui reste lisible demain, sans rien ' +
+			"Rien à renouveler, donc aucune échéance qui vienne couper l'accès à vos " +
+			"documents. Ce que vous produisez aujourd'hui reste lisible demain, sans rien " +
 			'à reconduire.'
 	}
 ];
@@ -55,27 +55,27 @@ const faq = [
 		q: 'Faut-il payer pour télécharger une quittance ?',
 		a:
 			'Non. La quittance de loyer est gratuite par la loi (article 21 de la loi du 6 ' +
-			'juillet 1989), et Quitalo la génère dans votre navigateur : il n’y a pas de ' +
+			"juillet 1989), et Quitalo la génère dans votre navigateur : il n'y a pas de " +
 			'paiement à franchir pour récupérer un document que vous venez de produire.'
 	},
 	{
-		q: 'Que se passe-t-il si je n’ouvre pas Quitalo pendant un an ?',
+		q: "Que se passe-t-il si je n'ouvre pas Quitalo pendant un an ?",
 		a:
-			'Rien. Il n’y a pas de compte à expirer. Vos données vous attendent dans votre ' +
-			'navigateur, et votre sauvegarde chiffrée reste là où vous l’avez rangée.'
+			"Rien. Il n'y a pas de compte à expirer. Vos données vous attendent dans votre " +
+			"navigateur, et votre sauvegarde chiffrée reste là où vous l'avez rangée."
 	},
 	{
 		q: 'Comment un outil sans serveur peut-il tenir dans la durée ?',
 		a:
-			'Parce qu’il ne coûte presque rien à faire tourner : les pages sont statiques et ' +
-			'tout le travail se fait dans votre navigateur. Il n’y a ni base de données à ' +
+			"Parce qu'il ne coûte presque rien à faire tourner : les pages sont statiques et " +
+			"tout le travail se fait dans votre navigateur. Il n'y a ni base de données à " +
 			'entretenir, ni infrastructure à financer par la publicité ou par vos données.'
 	},
 	{
 		q: 'Et si je veux partir ?',
 		a:
 			'Vous exportez une archive de chaque bail : les quittances et relevés en PDF, une ' +
-			'page à ouvrir dans n’importe quel navigateur et vos données dans un format ' +
+			"page à ouvrir dans n'importe quel navigateur et vos données dans un format " +
 			'ouvert. Elle se lit sans Quitalo, ce qui est bien le but.'
 	}
 ];
@@ -92,7 +92,7 @@ const structuredData = {
 
 const title = `Nos engagements : sans compte, sans mur au téléchargement - ${BRAND}`;
 const description =
-	'Ce que Quitalo ne fera jamais : pas de compte à créer, pas de période d’essai, pas ' +
+	"Ce que Quitalo ne fera jamais : pas de compte à créer, pas de période d'essai, pas " +
 	'de document retenu, pas de compte supprimé pour inactivité, pas de donnée revendue. ' +
 	'Et la raison technique pour laquelle chaque engagement tient.';
 ---
@@ -108,8 +108,8 @@ const description =
 	<section class="wrap intro">
 		<h1>Ce que Quitalo ne fera jamais</h1>
 		<p class="lede">
-			Beaucoup d’outils de gestion locative laissent remplir un formulaire, puis dressent un mur au
-			moment de télécharger le document. C’est l’inverse de ce que nous construisons. Voici nos
+			Beaucoup d'outils de gestion locative laissent remplir un formulaire, puis dressent un mur au
+			moment de télécharger le document. C'est l'inverse de ce que nous construisons. Voici nos
 			engagements, et la raison technique pour laquelle chacun tient.
 		</p>
 	</section>
@@ -121,8 +121,8 @@ const description =
 	<section class="wrap">
 		<h2>Ce que Quitalo ne fait pas</h2>
 		<p>
-			Un engagement n’a de valeur que si l’on dit aussi ce qui manque. Quitalo ne rédige pas votre
-			bail, ne fait pas d’état des lieux photo et ne propose pas de signature électronique : cette
+			Un engagement n'a de valeur que si l'on dit aussi ce qui manque. Quitalo ne rédige pas votre
+			bail, ne fait pas d'état des lieux photo et ne propose pas de signature électronique : cette
 			dernière suppose un tiers de confiance distant, donc un serveur, ce qui contredirait tout le
 			reste de cette page. Si ces fonctions vous sont indispensables, un autre outil vous servira
 			mieux.
@@ -137,10 +137,10 @@ const description =
 	<section class="wrap closing">
 		<h2>Rien à créer, rien à confirmer</h2>
 		<p>
-			L’application s’ouvre dans le navigateur. Ajoutez un logement, un locataire, un bail : la
+			L'application s'ouvre dans le navigateur. Ajoutez un logement, un locataire, un bail : la
 			première quittance est prête, et elle est à vous.
 		</p>
-		<a href={APP_URL} class="btn btn-primary">Ouvrir l’application</a>
+		<a href={APP_URL} class="btn btn-primary">Ouvrir l'application</a>
 	</section>
 </Base>
 
