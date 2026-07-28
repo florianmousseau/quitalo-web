@@ -1,4 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-	<rect width="64" height="64" rx="14" fill="#0b6e4f"/>
-	<text x="32" y="44" font-family="system-ui, sans-serif" font-size="36" font-weight="700" fill="#ffffff" text-anchor="middle">Q</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+	<!-- Le meme signe que brand/signe.svg, avec sa teinte figee: un favicon n'a
+	     pas de contexte d'ou heriter. La regle media suit la barre d'onglets. -->
+	<style>
+		.signe { fill: none; stroke: #0b6e4f; }
+		.plein { fill: #0b6e4f; stroke: none; }
+		@media (prefers-color-scheme: dark) {
+			.signe { stroke: #4cc39a; }
+			.plein { fill: #4cc39a; }
+		}
+	</style>
+	<rect class="signe" x="3.2" y="2.6" width="17.6" height="18.8" rx="2.6" stroke-width="2.1" />
+	<rect class="plein" x="6.8" y="15.1" width="10.4" height="2.7" rx="1.35" />
 </svg>
