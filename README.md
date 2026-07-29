@@ -1,13 +1,13 @@
 # quitalo-web
 
-Marketing site for [Quitalo](https://quitalo.co), the local-first companion
+Marketing site for [Quitalo](https://quitalo.fr), the local-first companion
 for French private landlords: receipts (quittances), rent tracking, IRL
 indexation and arrears letters. Free, no account, no server; the data lives
 in the landlord's browser.
 
 The application itself lives at
 [florianmousseau/quitalo](https://github.com/florianmousseau/quitalo) and is
-served at [app.quitalo.co](https://app.quitalo.co).
+served at [app.quitalo.fr](https://app.quitalo.fr).
 
 ## Stack
 
