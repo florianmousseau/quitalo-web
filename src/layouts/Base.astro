@@ -9,7 +9,11 @@ interface Props {
 }
 
 const { title = SEO.title, description = SEO.description } = Astro.props;
-const canonical = new URL(Astro.url.pathname, SITE_URL).href;
+// `build.format: 'file'` makes Astro.url.pathname end in .html at build time,
+// while the site is served extensionless: point the canonical at the URL that
+// answers 200 rather than at the .html twin that 308s to it.
+const servedPath = Astro.url.pathname.replace(/(?:\/index)?\.html$/, '') || '/';
+const canonical = new URL(servedPath, SITE_URL).href;
 ---
 
 <!doctype html>
