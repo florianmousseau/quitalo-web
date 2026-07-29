@@ -15,3 +15,6 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Sous-produit du rendu des cartes (brand/og.mjs decompresse la police)
+brand/.source-serif.ttf
