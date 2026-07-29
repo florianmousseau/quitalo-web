@@ -26,9 +26,10 @@ ${features.map((f) => `### ${f.title}\n\n${f.body}`).join('\n\n')}
 
 Dans le navigateur du bailleur. L'application ouvre un coffre local et demande,
 au premier lancement, où en garder une copie durable : un fichier sur son
-appareil ou un serveur WebDAV qu'il contrôle. Aucune donnée de locataire ne
-transite par un serveur de l'éditeur, qui n'en a pas. Le bailleur reste donc
-seul responsable de traitement au sens du RGPD.
+appareil, ou son propre Google Drive. Cette copie est chiffrée : le service
+qui l'héberge ne peut pas la lire. Aucune donnée de locataire ne transite par
+un serveur de l'éditeur, qui n'en a pas. Le bailleur reste donc seul
+responsable de traitement au sens du RGPD.
 
 ## Pour qui
 

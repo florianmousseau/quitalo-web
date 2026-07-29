@@ -4,8 +4,8 @@ Guidance for AI agents working in this repo.
 
 ## What this is
 
-The marketing site for Quitalo (quitalo.co): a static Astro site presenting
-the app served at app.quitalo.co. No app code here; the application lives in
+The marketing site for Quitalo (quitalo.fr): a static Astro site presenting
+the app served at app.quitalo.fr. No app code here; the application lives in
 the `quitalo` repository. Keep the two airtight in code and commits; the site
 may of course link to the app.
 
