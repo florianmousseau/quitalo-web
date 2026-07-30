@@ -39,7 +39,7 @@ function luminance(couleur) {
 	const hex = couleur.replace('#', '');
 	const court = hex.length === 3;
 	const canaux = [0, 1, 2].map((i) =>
-		parseInt(court ? hex[i] + hex[i] : hex.slice(i * 2, i * 2 + 2), 16)
+		Number.parseInt(court ? hex[i] + hex[i] : hex.slice(i * 2, i * 2 + 2), 16)
 	);
 	const [r, v, b] = canaux.map((c) => {
 		const n = c / 255;
@@ -71,17 +71,20 @@ const PASTILLES = [
 ];
 
 const css = readFileSync(CSS, 'utf8');
+// Un objet par theme plutot qu'un couple [nom, jetons] : dans un tableau de
+// couples heterogenes, le nom et la table de jetons ont le meme type inferre,
+// et l'interpoler devient indistinguable d'un objet imprime en clair.
 const themes = [
-	['CLAIR', jetons(css, ':root {')],
+	{ nom: 'CLAIR', jetons: jetons(css, ':root {') },
 	// Le theme sombre suit la preference systeme, il n'a pas de selecteur a lui:
 	// on lit le bloc :root imbrique dans la requete media.
-	[
-		'SOMBRE',
-		{
+	{
+		nom: 'SOMBRE',
+		jetons: {
 			...jetons(css, ':root {'),
 			...jetons(css.slice(css.indexOf('@media (prefers-color-scheme: dark)')), ':root {')
 		}
-	]
+	}
 ];
 
 let echecs = 0;
@@ -93,7 +96,7 @@ const controler = (libelle, avant, arriere) => {
 	console.log(`${ok ? '  ok ' : '  XX '} ${libelle.padEnd(26)} ${r.toFixed(2).padStart(5)} : 1`);
 };
 
-for (const [nom, t] of themes) {
+for (const { nom, jetons: t } of themes) {
 	console.log(`\n=== ${nom} ===`);
 	for (const encre of ENCRES) {
 		for (const surface of SURFACES) controler(`${encre} / ${surface}`, t[encre], t[surface]);
