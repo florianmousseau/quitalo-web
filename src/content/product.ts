@@ -118,10 +118,35 @@ export const faq = [
 			"Un bail d'habitation vide dure trois ans, un meublé un an, et il se renouvelle " +
 			'tacitement : personne ne signe rien, le même bail repart. Le bailleur ne peut y ' +
 			'mettre fin que par un congé motivé — reprise, vente, ou motif légitime et sérieux — ' +
-			'parvenu au locataire six mois avant le terme pour un bail vide, trois mois pour un ' +
-			'meublé (article 15-I). Un jour de retard et le bail court pour un terme entier. ' +
-			'Quitalo calcule le terme en cours et la date limite du congé ; le motif et la forme ' +
-			'restent votre décision.'
+			'six mois avant le terme pour un bail vide, trois mois pour un meublé (article 15-I). ' +
+			'Attention : ce délai court à compter de la RÉCEPTION du congé, pas de son envoi. ' +
+			"Poster le dernier jour, c'est avoir manqué le délai, et le bail repart pour un " +
+			'terme entier. Quitalo calcule le terme en cours et cette date limite de réception.'
+	},
+	{
+		q: 'Que doit contenir un congé pour reprise ou pour vente ?',
+		a:
+			'Le motif, à peine de nullité. Pour une reprise : les nom et adresse du bénéficiaire ' +
+			'et la nature de son lien avec vous, le bénéficiaire ne pouvant être que vous, votre ' +
+			'conjoint, partenaire de PACS, concubin notoire depuis un an, vos ascendants ou ' +
+			'descendants, ou les leurs. Pour une vente : le prix, les conditions, et la ' +
+			"reproduction mot pour mot des cinq premiers alinéas de l'article 15-II. Sur un bail " +
+			"vide, le congé doit en outre être accompagné de la notice d'information de l'arrêté " +
+			'du 13 décembre 2017. Et un locataire de plus de 65 ans aux ressources modestes ne ' +
+			'peut recevoir congé sans offre de relogement (article 15-III). Quitalo énumère ces ' +
+			'exigences mais ne rédige pas la lettre : un courrier à qui manque son annexe a ' +
+			"l'air valable et ne l'est pas. Votre ADIL départementale est gratuite et c'est son " +
+			'métier.'
+	},
+	{
+		q: 'Mon locataire donne son préavis : quand part-il exactement ?',
+		a:
+			'Trois mois après la réception de sa lettre pour un bail vide, un mois pour un ' +
+			'meublé. Le préavis tombe à un mois sur un bail vide si le logement est en zone ' +
+			"tendue, ou pour une mutation, une perte d'emploi, un premier emploi, le RSA ou " +
+			"l'AAH, une raison de santé attestée, ou des violences au sein du couple. Là encore " +
+			"c'est la réception qui compte. Quitalo calcule la date de départ et la porte sur le " +
+			'bail, ce qui démarre le compte à rebours du dépôt de garantie.'
 	},
 	{
 		q: "Le locataire doit-il fournir une attestation d'assurance chaque année ?",
