@@ -30,7 +30,11 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm ci
+        # --ignore-scripts: nothing this project needs at install time runs
+        # through a lifecycle script. `prepare` only installs the local git
+        # hooks, which a runner has no use for, and astro syncs its own types
+        # from `check` and `build`. So a dependency cannot execute code here.
+        run: npm ci --ignore-scripts
 
       - name: Format check (prettier)
         run: npm run format:check
@@ -58,7 +62,9 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: gitleaks/gitleaks-action@v2
+      # Epingle sur le SHA de v2.3.9 : un tag mobile peut etre repointe vers un
+      # autre commit par son auteur, et cette action lit tout le depot.
+      - uses: gitleaks/gitleaks-action@ff98106e4c7b2bc287b24eaf42907196329070c7 # v2.3.9
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITLEAKS_ENABLE_COMMENTS: 'false'
