@@ -6,6 +6,15 @@
 
 export const features = [
 	{
+		title: 'Ce qui est à faire, et pour quand',
+		body:
+			"Vous ne cherchez pas comment écrire une quittance. Vous oubliez que l'attestation " +
+			"d'assurance était due en mars, qu'un dépôt non rendu dans le mois grossit de 10 % " +
+			'du loyer, et que le droit de réviser un loyer disparaît un an après. Ces dates ' +
+			'sont déjà dans vos baux : Quitalo les lit, chiffre ce que coûte chaque oubli, et ' +
+			'retire la ligne dès que le geste est posé.'
+	},
+	{
 		title: 'La quittance en dix secondes',
 		body:
 			'Marquez un loyer payé, téléchargez la quittance PDF : période, loyer et charges ' +
@@ -102,6 +111,25 @@ export const faq = [
 			'meublée (article 22). Le plafond se calcule sur le loyer seul : un bail à 800 € ' +
 			'plus 100 € de charges permet de retenir 800 €, pas 900 €. Quitalo signale un ' +
 			'dépôt au-delà du plafond.'
+	},
+	{
+		q: 'Quand un bail se renouvelle-t-il, et quand donner congé ?',
+		a:
+			"Un bail d'habitation vide dure trois ans, un meublé un an, et il se renouvelle " +
+			'tacitement : personne ne signe rien, le même bail repart. Le bailleur ne peut y ' +
+			'mettre fin que par un congé motivé — reprise, vente, ou motif légitime et sérieux — ' +
+			'parvenu au locataire six mois avant le terme pour un bail vide, trois mois pour un ' +
+			'meublé (article 15-I). Un jour de retard et le bail court pour un terme entier. ' +
+			'Quitalo calcule le terme en cours et la date limite du congé ; le motif et la forme ' +
+			'restent votre décision.'
+	},
+	{
+		q: "Le locataire doit-il fournir une attestation d'assurance chaque année ?",
+		a:
+			"Oui : il doit justifier d'une assurance couvrant les risques locatifs à la remise " +
+			'des clés, puis chaque année à la demande du bailleur (article 7 g de la loi du 6 ' +
+			'juillet 1989). Notez la date de la dernière attestation reçue dans Quitalo, et le ' +
+			"rappel arrive à l'échéance."
 	},
 	{
 		q: 'Où sont stockées mes données ?',
