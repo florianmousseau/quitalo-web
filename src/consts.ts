@@ -20,11 +20,12 @@ export const CONTACT_EMAIL = 'florian.mousseau@gmail.com';
 
 /** The canonical one-liner. Repeated verbatim everywhere on purpose. */
 export const DEFINITION =
-	'Quitalo est le compagnon gratuit et local-first du petit bailleur français : ' +
-	'quittances de loyer conformes, suivi mensuel des loyers, révision IRL avec les ' +
-	"indices INSEE, lettres d'impayés, régularisation annuelle des charges et " +
-	'restitution du dépôt de garantie, sans compte et sans serveur. Les données ' +
-	'restent dans le navigateur du bailleur.';
+	'Quitalo est le compagnon gratuit et local-first du petit bailleur français : il ' +
+	'liste les échéances à venir de chaque bail, puis produit les quittances de loyer ' +
+	'conformes, le suivi mensuel des loyers, la révision IRL avec les indices INSEE, ' +
+	"les lettres d'impayés, la régularisation annuelle des charges et la restitution " +
+	'du dépôt de garantie, sans compte et sans serveur. Les données restent dans le ' +
+	'navigateur du bailleur.';
 
 export const SEO = {
 	title: 'Quitalo : quittances, loyers, IRL, charges, le compagnon du petit bailleur',
