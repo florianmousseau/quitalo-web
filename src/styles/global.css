@@ -84,6 +84,18 @@ a:hover {
 	text-decoration: underline;
 }
 
+/* Un lien pose au milieu d'une phrase ne se distingue que par sa couleur, et
+   l'ecart avec le texte autour est de 1.19:1 : trop peu pour qu'on le voie
+   sans percevoir la couleur (WCAG 1.4.1). Le souligne le montre a tous. La
+   rangee de liens legaux du pied de page est aussi dans un paragraphe : elle
+   se souligne donc elle aussi, ce qui est voulu. Les boutons, la navigation
+   et la marque sont hors paragraphe et gardent leur allure. */
+p a:not(.btn),
+li a:not(.btn) {
+	text-decoration: underline;
+	text-underline-offset: 0.15em;
+}
+
 h1,
 h2,
 h3 {
