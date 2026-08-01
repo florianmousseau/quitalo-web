@@ -53,7 +53,7 @@ export const features = [
 		body:
 			'Un mois après la remise des clés, deux si les états des lieux diffèrent, puis ' +
 			'10 % du loyer par mois commencé (article 22). Quitalo donne la date limite, la ' +
-			'majoration déjà due et la lettre de restitution — retenue et motif compris.'
+			'majoration déjà due et la lettre de restitution - retenue et motif compris.'
 	},
 	{
 		title: 'Le récapitulatif pour votre déclaration',
@@ -117,7 +117,7 @@ export const faq = [
 		a:
 			"Un bail d'habitation vide dure trois ans, un meublé un an, et il se renouvelle " +
 			'tacitement : personne ne signe rien, le même bail repart. Le bailleur ne peut y ' +
-			'mettre fin que par un congé motivé — reprise, vente, ou motif légitime et sérieux — ' +
+			'mettre fin que par un congé motivé - reprise, vente, ou motif légitime et sérieux - ' +
 			'six mois avant le terme pour un bail vide, trois mois pour un meublé (article 15-I). ' +
 			'Attention : ce délai court à compter de la RÉCEPTION du congé, pas de son envoi. ' +
 			"Poster le dernier jour, c'est avoir manqué le délai, et le bail repart pour un " +
