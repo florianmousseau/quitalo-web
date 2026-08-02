@@ -1,5 +1,55 @@
-# Cloudflare Pages headers. The llms endpoints are UTF-8 French text; an
-# explicit charset stops browsers from guessing latin-1 (mojibake).
+# Cloudflare Pages headers.
+
+# This site is six static pages with no executable script, no form, no image
+# beyond its own icons, and no third party of any kind: the strictest policy
+# there is, is also the one that fits. `connect-src 'none'` is the point - it
+# makes the "aucune collecte de donnees" the pages claim verifiable in the
+# browser, rather than a sentence one has to take on trust.
+#
+# `script-src 'self'` and not 'none': the pages carry JSON-LD blocks. They are
+# data, not code, and no browser executes them, but 'self' costs nothing and
+# leaves no room for argument. `style-src 'unsafe-inline'` because Astro inlines
+# the stylesheet; hashes would break the page on the next copy edit.
+#
+# `form-action 'none'` because there is no form on the site: relax it to 'self'
+# the day one ships.
+#
+# HSTS WITHOUT `preload`. Two years and includeSubDomains protect this domain
+# and app.quitalo.fr, and both can be shortened. Preloading is a submission to
+# a browser-vendor list that takes months to leave: it deserves its own
+# decision, not a ride-along.
+#
+# Nothing here pre-allows an analytics beacon, deliberately. The mentions
+# legales promise no tracking and no cookies; a policy that quietly leaves the
+# door open for one is a policy that disagrees with the page it serves.
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), interest-cohort=()
+  Strict-Transport-Security: max-age=63072000; includeSubDomains
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src 'none'; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; form-action 'none'; upgrade-insecure-requests
+
+# The self-hosted face is the single heaviest file of this site - 49.6 kB of
+# the 57 kB the home page transfers, 87 % of it - and it never changes, yet it
+# was falling through to the Pages default: max-age=14400, must-revalidate.
+# Four hours, on the one asset where a second visit should cost nothing.
+#
+# Thirty days and NOT immutable: the filename carries no hash, so a new cut of
+# the face reuses it, and an immutable response freezes its headers along with
+# its body for a year - neither a deploy nor a fix releases it, only an edge
+# purge or a rename. A plain max-age expires on its own.
+/fonts/*
+  Cache-Control: public, max-age=2592000
+
+/favicon.svg
+  Cache-Control: public, max-age=604800
+
+/og.png
+  Cache-Control: public, max-age=604800
+
+# The llms endpoints are UTF-8 French text; an explicit charset stops browsers
+# from guessing latin-1 (mojibake).
 /llms.txt
   Content-Type: text/plain; charset=utf-8
 
