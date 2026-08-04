@@ -16,7 +16,7 @@ export const DEMO_URL = `${APP_URL}/?demo`;
 
 export const BRAND = 'Quitalo';
 
-export const CONTACT_EMAIL = 'florian.mousseau@gmail.com';
+export const CONTACT_EMAIL = 'contact@quitalo.fr';
 
 /** The canonical one-liner. Repeated verbatim everywhere on purpose. */
 export const DEFINITION =
