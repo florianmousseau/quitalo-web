@@ -36,4 +36,26 @@ const reponse = await fetch('https://api.indexnow.org/indexnow', {
 });
 // 200 et 202 disent tous deux "recu"; le reste merite d'etre lu.
 console.log(`IndexNow ${reponse.status} pour ${urls.length} URL`);
-if (!reponse.ok) console.log(await reponse.text());
+if (!reponse.ok) console.log(lisible(await reponse.text()));
+
+/**
+ * Rend lisible un corps de reponse ecrit par un service exterieur.
+ *
+ * Le message vient de chez Bing, pas de chez nous : un retour a la ligne suffit
+ * a fabriquer une fausse entree de journal, et une sequence d'echappement a
+ * repeindre un terminal. On garde le texte, on lui retire ses caracteres de
+ * commande et on le borne. Sonar jssecurity:S5145, 2026-08-06.
+ */
+function lisible(texte) {
+	// Caractere par caractere, et non par une classe de regex : eslint refuse un
+	// caractere de commande dans une expression reguliere (`no-control-regex`), et
+	// la regle a raison sur le fond meme si c'est exactement ce qu'on vise ici.
+	// Le contrat du depot interdit de la desactiver pour passer.
+	let propre = '';
+	for (const c of texte) {
+		const code = c.codePointAt(0);
+		propre += code < 32 || (code >= 127 && code <= 159) ? ' ' : c;
+	}
+	propre = propre.trim();
+	return propre.length > 300 ? `${propre.slice(0, 300)}...` : propre;
+}
